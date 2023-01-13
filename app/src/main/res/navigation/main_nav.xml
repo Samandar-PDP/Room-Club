@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav.xml"
+    app:startDestination="@id/clubListFragment">
+
+    <fragment
+        android:id="@+id/clubListFragment"
+        android:name="uz.digital.clubdatabase.fragment.ClubListFragment"
+        android:label="fragment_club_list"
+        tools:layout="@layout/fragment_club_list">
+        <action
+            android:id="@+id/action_clubListFragment_to_addUpdateFragment"
+            app:destination="@id/addUpdateFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_clubListFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="uz.digital.clubdatabase.fragment.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_detailFragment_to_addUpdateFragment"
+            app:destination="@id/addUpdateFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/detailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addUpdateFragment"
+        android:name="uz.digital.clubdatabase.fragment.AddUpdateFragment"
+        android:label="fragment_add_update"
+        tools:layout="@layout/fragment_add_update" >
+        <action
+            android:id="@+id/action_addUpdateFragment_to_clubListFragment"
+            app:destination="@id/clubListFragment"
+            app:popUpTo="@id/clubListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
